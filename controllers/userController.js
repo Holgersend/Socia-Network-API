@@ -44,8 +44,26 @@ module.exports = {
 // PUT to update a user by its id 
     async updateUser(req, res) {
         try {
-            const user = await User.findOneAndUpdate()
+            const user = await User.findByIdAndUpdate(
+                req.params.userId, { $set: req.body }, { runValidator: true, new: true }
+            );
+            if(!user) {
+                return res.status(404).json(err);
+            }
+            res.json(user);
+        } catch (err) {
+            res.status(500).json(err);
         }
     },
 // DELETE to remove user by its id
+    async deleteUser(req, res) {
+        try { 
+            const user = await User.findOneAndDelete({ _id: req.params.userId });
+            if (!user) {
+                return res.status(404).json(err);
+            }
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
 };
