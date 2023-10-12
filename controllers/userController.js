@@ -33,6 +33,19 @@ module.exports = {
         }
     },
 // POST a new user
+    async createUser(req, res) {
+        try {
+            const user = await User.create(req.body);
+            res.json(user);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
 // PUT to update a user by its id 
+    async updateUser(req, res) {
+        try {
+            const user = await User.findOneAndUpdate()
+        }
+    },
 // DELETE to remove user by its id
 };
