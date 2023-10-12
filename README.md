@@ -14,10 +14,10 @@ This project is a challenge to build an API for a social network web application
 As a social media startup, I want an API for my social network that uses a NoSQL database so that my website can handle large amounts of unstructured data.
 
  ## Technologies Used
-*- Express.js
-*- MongoDB
-*- Mongoose ODM
-*- JavaScript
+- Express.js
+- MongoDB
+- Mongoose ODM
+- JavaScript
 
 ## License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
